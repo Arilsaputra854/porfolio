@@ -9,12 +9,13 @@ interface NavbarProps {
 }
 
 const navLinks = [
-  { name: 'Home', href: '#home', file: 'Main.tsx', icon: '⚛️' },
-  { name: 'About', href: '#about', file: 'About.md', icon: '📝' },
-  { name: 'Experience', href: '#experience', file: 'Resume.json', icon: '📋' },
-  { name: 'Skills', href: '#skills', file: 'Stack.config', icon: '⚙️' },
-  { name: 'Projects', href: '#projects', file: 'Portfolio.ts', icon: '🚀' },
-  { name: 'Contact', href: '#contact', file: 'Connect.api', icon: '🔌' },
+  { name: 'Home', href: '#home', file: 'Home', icon: '⚛️' },
+  { name: 'About', href: '#about', file: 'About', icon: '📝' },
+  { name: 'Products', href: '#products', file: 'Products', icon: '🏗️' },
+  { name: 'Experience', href: '#experience', file: 'Experience', icon: '📋' },
+  { name: 'Skills', href: '#skills', file: 'Skills', icon: '⚙️' },
+  { name: 'Projects', href: '#projects', file: 'Projects', icon: '🚀' },
+  { name: 'Contact', href: '#contact', file: 'Contact', icon: '🔌' },
 ]
 
 export default function Navbar({ isDark, toggleTheme }: NavbarProps) {

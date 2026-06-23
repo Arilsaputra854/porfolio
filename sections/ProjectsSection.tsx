@@ -11,6 +11,7 @@ interface Project {
   id: number
   title: string
   description: string
+  status: string
   category: 'web' | 'mobile' | 'backend'
   stack: string[]
   role: string
@@ -23,7 +24,8 @@ const projects: Project[] = [
   {
     id: 1,
     title: 'Sampahku.id',
-    description: 'A comprehensive waste management system platform built to help users manage and track their waste efficiently.',
+    description: 'Community-driven waste management platform solving urban waste sorting and disposal challenges in Indonesia. Connects households to local waste collectors with real-time tracking and scheduling. Built from scratch as a solo founder — from product ideation to full deployment. Currently live with 500+ registered users across multiple cities.',
+    status: 'Live · 500+ users',
     category: 'web',
     stack: ['Next.js', 'Firebase', 'Tailwind CSS', 'TypeScript'],
     role: 'Founder & Fullstack Developer',
@@ -34,7 +36,8 @@ const projects: Project[] = [
   {
     id: 2,
     title: 'KodingYuk! Platform',
-    description: 'Digital agency platform for showcasing services, projects, and managing client requests.',
+    description: 'Digital studio platform showcasing services, client case studies, and enabling direct project requests from businesses and founders. Built to support a growing portfolio of web and mobile clients across Indonesia. Handles lead generation, service presentation, and client onboarding flows. Actively serving clients since Sep 2023.',
+    status: 'Live · Active clients',
     category: 'web',
     stack: ['Next.js', 'React', 'Firebase', 'Framer Motion'],
     role: 'Founder',
@@ -44,7 +47,8 @@ const projects: Project[] = [
   {
     id: 3,
     title: 'Attendance Mobile App',
-    description: 'Real-time attendance tracking application for Tunas Rent employees with location validation.',
+    description: 'Real-time attendance tracking app for Tunas Rent employees with GPS-based location validation and geofencing to prevent buddy punching. Integrates with the company HR workflow for daily reporting and leave management. Built in Flutter with offline-first support for low-connectivity environments. Deployed across 100+ employees in multiple branches.',
+    status: 'Deployed · 100+ users',
     category: 'mobile',
     stack: ['Flutter', 'Dart', 'Google Maps API', 'Firebase'],
     role: 'Mobile Developer',
@@ -54,7 +58,8 @@ const projects: Project[] = [
   {
     id: 4,
     title: 'ERP Inventory System',
-    description: 'Integrated inventory management system designed to streamline warehouse operations.',
+    description: 'Integrated inventory management system built on Odoo to streamline warehouse operations at a corporate scale. Covers stock tracking, purchase order workflows, and supplier management with real-time dashboards. Customized Odoo modules to fit specific operational requirements of the business. Reduced manual inventory reconciliation time by over 60%.',
+    status: 'Deployed · Enterprise',
     category: 'backend',
     stack: ['Python', 'Odoo', 'PostgreSQL', 'Docker'],
     role: 'IT System Engineer',
@@ -108,28 +113,28 @@ export default function ProjectsSection() {
       ref={sectionRef}
       className="py-32 relative overflow-hidden"
     >
-      {/* Background */}
       <div className="absolute top-1/3 right-0 w-96 h-96 dark:bg-indigo-600/12 bg-indigo-400/20 rounded-full blur-3xl" />
       <div className="absolute bottom-0 left-1/4 w-80 h-80 dark:bg-purple-600/10 bg-purple-400/20 rounded-full blur-3xl" />
 
       <div className="max-w-6xl mx-auto px-6">
-        {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16 font-code"
+          className="text-center mb-16"
         >
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/5 border border-white/5 text-gray-500 text-xs mb-6 uppercase tracking-[0.3em]">
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/5 border border-white/5 text-gray-500 text-xs mb-6 uppercase tracking-[0.3em] font-mono">
             src/modules/Portfolio.tsx
           </div>
           <h2 className="text-4xl md:text-5xl font-bold dark:text-white text-slate-800 mb-4">
-            <span className="code-keyword">export const</span> <span className="code-function">Projects</span> = <span className="text-white">()</span>{' =>'}
+            Projects
           </h2>
+          <p className="dark:text-slate-400 text-slate-600 text-sm max-w-md mx-auto">
+            Things I&apos;ve shipped — from client work to personal builds.
+          </p>
         </motion.div>
 
-        {/* Category Filter */}
         <div className="flex flex-wrap justify-center gap-3 mb-12">
           {categories.map((cat) => (
             <button
@@ -151,8 +156,7 @@ export default function ProjectsSection() {
           ))}
         </div>
 
-        {/* Projects Grid */}
-        <div className="projects-grid grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="projects-grid grid md:grid-cols-2 gap-6">
           <AnimatePresence mode="popLayout">
             {filteredProjects.map((project) => (
               <motion.div
@@ -164,51 +168,65 @@ export default function ProjectsSection() {
                 transition={{ duration: 0.4 }}
                 className="project-card ide-card group"
               >
-                {/* Header */}
                 <div className="ide-header">
                   <div className="flex gap-1.5">
                     <div className="w-2 h-2 rounded-full bg-white/10" />
                   </div>
-                  <span className="ml-2 text-[10px] font-mono text-gray-500">{project.category}/{project.title.toLowerCase().replace(/\s+/g, '-')}.md</span>
+                  <span className="ml-2 text-[10px] font-mono text-gray-500">
+                    {project.category}/{project.title.toLowerCase().replace(/\s+/g, '-')}.md
+                  </span>
                 </div>
 
-                {/* Content */}
-                <div className="p-6 font-code">
-                  <h3 className="text-base font-bold dark:text-white text-slate-800 mb-2 group-hover:text-indigo-400 transition-colors">
-                    <span className="code-function">{project.title.replace(/\s+/g, '')}</span>()
-                  </h3>
-                  <p className="code-comment text-[10px] mb-4 line-clamp-2">
-                    /* {project.description} */
+                <div className="p-6">
+                  <div className="flex items-start justify-between gap-3 mb-3">
+                    <h3 className="text-base font-bold dark:text-white text-slate-200 group-hover:text-indigo-400 transition-colors">
+                      {project.title}
+                    </h3>
+                    <span className="inline-flex items-center gap-1 px-2 py-0.5 text-[9px] bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 rounded-full font-mono flex-shrink-0 mt-0.5">
+                      <span className="w-1 h-1 rounded-full bg-emerald-400" />
+                      {project.status}
+                    </span>
+                  </div>
+
+                  <p className="dark:text-slate-400 text-slate-400 text-xs leading-relaxed mb-4">
+                    {project.description}
                   </p>
- 
-                  {/* Stack */}
+
+                  <div className="text-[10px] font-mono mb-4">
+                    <span className="text-gray-500">Role: </span>
+                    <span className="text-indigo-400">{project.role}</span>
+                  </div>
+
                   <div className="flex flex-wrap gap-2 mb-6">
                     {project.stack.map((tech) => (
                       <span
                         key={tech}
-                        className="px-2 py-0.5 text-[9px] bg-white/5 text-gray-400 border border-white/5"
+                        className="px-2 py-0.5 text-[9px] bg-white/5 text-gray-400 border border-white/5 rounded font-mono"
                       >
-                        <span className="code-string">&quot;{tech}&quot;</span>
+                        {tech}
                       </span>
                     ))}
                   </div>
 
-                  {/* Actions */}
                   <div className="flex gap-2">
                     {project.demo && (
                       <a
                         href={project.demo}
-                        className="flex-1 py-2 text-[10px] text-center font-bold bg-white/5 hover:bg-white/10 border border-white/10 transition-colors"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex-1 py-2 text-[10px] text-center font-bold bg-indigo-500/10 hover:bg-indigo-500/20 border border-indigo-500/20 text-indigo-400 transition-colors rounded"
                       >
-                        RUN_DEMO
+                        Live Demo →
                       </a>
                     )}
-                    {project.github && (
+                    {project.github && project.github !== '#' && (
                       <a
                         href={project.github}
-                        className="flex-1 py-2 text-[10px] text-center font-bold bg-white/5 hover:bg-white/10 border border-white/10 transition-colors"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex-1 py-2 text-[10px] text-center font-bold bg-white/5 hover:bg-white/10 border border-white/10 text-gray-400 transition-colors rounded"
                       >
-                        VIEW_SOURCE
+                        Source
                       </a>
                     )}
                   </div>

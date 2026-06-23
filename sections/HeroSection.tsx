@@ -43,18 +43,32 @@ export default function HeroSection() {
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
             <div className="w-16 h-[1px] bg-white/20 mb-8 lg:mb-12" />
-            <h1 className="text-3xl md:text-5xl lg:text-7xl font-bold leading-[1.1] mb-6 lg:mb-8 font-code">
+            <h1 className="text-3xl md:text-5xl lg:text-7xl font-bold leading-[1.1] mb-4 font-code">
               <span className="code-keyword">const</span> <span className="text-white">name</span> = <br />
-              <span className="code-string text-2xl md:text-5xl lg:text-7xl">&quot;Aril Saputra&quot;</span><span className="text-white">;</span> <br />
-              <span className="text-sm md:text-base text-gray-500 block mt-4 font-mono">// Fullstack Mobile Developer</span>
+              <span className="code-string text-2xl md:text-5xl lg:text-7xl">&quot;Aril Saputra&quot;</span><span className="text-white">;</span>
             </h1>
-            <p className="text-gray-400 text-sm md:text-base max-w-md mb-8 lg:mb-12 font-code leading-relaxed">
-              <span className="code-comment">/* 
-               * Building high-performance apps 
-               * with a focus on seamless UX 
-               * and robust architecture.
-               */</span>
+            <p className="text-base md:text-lg text-gray-200 font-sans font-medium mb-4">
+              Fullstack &amp; Mobile Developer · Founder of KodingYuk!
             </p>
+            <p className="text-gray-500 text-sm max-w-md mb-8 lg:mb-10 font-code leading-relaxed">
+              <span className="code-comment">// Building products from idea to launch — web, mobile, and everything in between.</span>
+            </p>
+            <div className="flex flex-wrap gap-3 mb-8 lg:mb-12">
+              <a
+                href="#projects"
+                onClick={(e) => { e.preventDefault(); document.querySelector('#projects')?.scrollIntoView({ behavior: 'smooth' }) }}
+                className="px-6 py-3 bg-indigo-600 hover:bg-indigo-500 text-white text-sm font-semibold rounded-lg transition-colors shadow-lg shadow-indigo-500/20"
+              >
+                See my work
+              </a>
+              <a
+                href="#contact"
+                onClick={(e) => { e.preventDefault(); document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' }) }}
+                className="px-6 py-3 bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/20 text-gray-300 hover:text-white text-sm font-semibold rounded-lg transition-all"
+              >
+                Build with me
+              </a>
+            </div>
 
             <motion.div
               animate={{ y: [0, 10, 0] }}

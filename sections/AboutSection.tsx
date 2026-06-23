@@ -94,23 +94,14 @@ export default function AboutSection() {
                 <span className="ml-4 text-[10px] font-mono text-gray-500">AboutMe.ts</span>
               </div>
               <div className="p-6 md:p-8">
-                <h3 className="text-lg md:text-xl font-bold dark:text-white text-slate-800 mb-6 font-code">
-                  <span className="code-comment">// Professional Summary</span>
+                <h3 className="text-base font-bold dark:text-white text-slate-200 mb-4">
+                  Builder. Founder. Developer.
                 </h3>
-                <div className="dark:text-slate-400 text-slate-600 leading-relaxed mb-6 font-code text-[12px] md:text-sm overflow-x-auto no-scrollbar">
-                  <span className="code-keyword">class</span> <span className="code-function">Developer</span> {'{'} <br />
-                  &nbsp;&nbsp;experience = <span className="code-number">2</span>;<br />
-                  &nbsp;&nbsp;specialization = [<br />
-                  &nbsp;&nbsp;&nbsp;&nbsp;<span className="code-string">&quot;Flutter&quot;</span>, <br />
-                  &nbsp;&nbsp;&nbsp;&nbsp;<span className="code-string">&quot;Kotlin&quot;</span>, <br />
-                  &nbsp;&nbsp;&nbsp;&nbsp;<span className="code-string">&quot;Next.js&quot;</span><br />
-                  &nbsp;&nbsp;];<br />
-                  {'}'}
-                </div>
-                <p className="dark:text-slate-400 text-slate-600 leading-relaxed mb-8 font-code text-[12px] md:text-sm">
-                  As the <span className="code-variable">Founder</span> of <span className="code-string">&quot;KodingYuk!&quot;</span> and former <span className="code-variable">CTO</span>, I combine 
-                  technical excellence with strategic leadership. Currently enhancing IT System 
-                  Engineering at <span className="code-string">&quot;Tunas Rent&quot;</span>.
+                <p className="dark:text-slate-400 text-slate-400 leading-relaxed mb-4 text-sm">
+                  I build digital products — from mobile apps to web platforms — with a focus on real-world impact and clean execution. Currently engineering IT systems at Tunas Rent while running KodingYuk!, my own digital studio.
+                </p>
+                <p className="dark:text-slate-400 text-slate-400 leading-relaxed mb-8 text-sm">
+                  2+ years across mobile (Flutter, Kotlin), fullstack (Next.js, Firebase), and ERP systems. Former CTO at Ousean Global. Bangkit Academy graduate (Google, GoTo, Traveloka).
                 </p>
 
                 {/* Stats */}

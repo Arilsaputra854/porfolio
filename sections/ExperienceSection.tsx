@@ -147,7 +147,7 @@ export default function ExperienceSection() {
                 <ul className="space-y-3 mb-8 font-code text-[11px] md:text-xs">
                   {exp.achievements.map((item, idx) => (
                     <li key={idx} className="flex items-start gap-3 dark:text-slate-400 text-slate-600">
-                      <span className="code-keyword flex-shrink-0">{'>>'}</span>
+                      <span className="text-indigo-400 flex-shrink-0">•</span>
                       <span className="leading-relaxed">{item}</span>
                     </li>
                   ))}

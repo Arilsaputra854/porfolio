@@ -7,6 +7,7 @@ import AboutSection from '@/sections/AboutSection'
 import ExperienceSection from '@/sections/ExperienceSection'
 import SkillsSection from '@/sections/SkillsSection'
 import ProjectsSection from '@/sections/ProjectsSection'
+import ProductsSection from '@/sections/ProductsSection'
 import ContactSection from '@/sections/ContactSection'
 import Footer from '@/components/Footer'
 import CursorParticles from '@/components/CursorParticles'
@@ -62,6 +63,7 @@ export default function Home() {
 
       <HeroSection />
       <AboutSection />
+      <ProductsSection />
       <ExperienceSection />
       <SkillsSection />
       <ProjectsSection />
